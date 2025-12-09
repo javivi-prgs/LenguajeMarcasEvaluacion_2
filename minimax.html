@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer - Discover the World's Hidden Wonders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/minimax.css">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>Travel Explorer</h1>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#" class="nav-link active">Destinations</a></li>
+                        <li><a href="#" class="nav-link">Travel Guides</a></li>
+                        <li><a href="#" class="nav-link">Stories</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="search-btn" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+                            <path d="21 21L16.65 16.65" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </button>
+                    <button class="sign-in-btn">Sign In</button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Discover the World's Hidden Wonders</h1>
+                        <p class="hero-description">
+                            Embark on extraordinary journeys to breathtaking destinations that few have explored.
+                            From remote mountain villages to pristine tropical paradises, uncover the stories
+                            that make each place uniquely magical.
+                        </p>
+                        <button class="cta-button">Plan Your Trip</button>
+                    </div>
+                    <div class="hero-images">
+                        <div class="image-collage">
+                            <div class="collage-item large">
+                                <div class="placeholder-image">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <path d="M16 6L12 2L8 6" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 2V15" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <span>Mountain Vista</span>
+                                </div>
+                            </div>
+                            <div class="collage-item small">
+                                <div class="placeholder-image">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <span>Hidden Gem</span>
+                                </div>
+                            </div>
+                            <div class="collage-item small">
+                                <div class="placeholder-image">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2 12C2 8.22876 4.23929 5 8 5H16C19.7608 5 22 8.22876 22 12C22 15.7712 19.7608 19 16 19H8C4.23929 19 2 15.7712 2 12Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <span>City Lights</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Destinations -->
+        <section class="destinations">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Top Destinations</h2>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">Popular</button>
+                        <button class="filter-tab">USA</button>
+                        <button class="filter-tab">Europe</button>
+                        <button class="filter-tab">Asia</button>
+                        <button class="filter-tab">Africa</button>
+                    </div>
+                    <button class="explore-btn">Explore all destinations</button>
+                </div>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <div class="placeholder-image">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M16 6L12 2L8 6" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>Kyoto</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Golden Pavilion</h3>
+                            <p class="card-description">Kyoto, Japan</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <div class="placeholder-image">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3 21C3 18.5144 3.725 16.1056 5.05013 14.1056C6.37525 12.1056 8.21071 10.6667 10.2857 10C11.7143 9.52381 13.0476 9.14286 14.2857 9C15.5238 8.85714 16.6667 8.85714 17.7143 9C18.7619 9.14286 19.7143 9.38095 20.5714 9.71429L21 10C21 12.2091 20.1839 14.3298 18.7712 15.9581C17.3584 17.5864 15.4289 18.6667 13.2857 19C11.1429 19.3333 9.04762 19 7 18C4.95238 17 3.33333 15.3333 3 13V21Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>Santorini</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">White Houses</h3>
+                            <p class="card-description">Santorini, Greece</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <div class="placeholder-image">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span>Paris</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Eiffel Tower</h3>
+                            <p class="card-description">Paris, France</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <div class="placeholder-image">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2 12C2 8.22876 4.23929 5 8 5H16C19.7608 5 22 8.22876 22 12C22 15.7712 19.7608 19 16 19H8C4.23929 19 2 15.7712 2 12Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>Bali</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Temple Sunrise</h3>
+                            <p class="card-description">Bali, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Stories -->
+        <section class="stories">
+            <div class="container">
+                <h2 class="section-title">Latest Stories</h2>
+                <div class="stories-grid">
+                    <article class="featured-story">
+                        <div class="story-image">
+                            <div class="placeholder-image">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>Local Cuisine</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <span class="story-category">Food and Drink</span>
+                            <h3 class="story-title">The Ultimate Guide to Street Food Adventures</h3>
+                            <p class="story-meta">March 15, 2024 • 8 min read</p>
+                            <p class="story-excerpt">
+                                Discover the hidden culinary treasures that locals swear by, from bustling night markets
+                                to family-run eateries tucked away in narrow alleyways.
+                            </p>
+                        </div>
+                    </article>
+                    <div class="story-list">
+                        <article class="story-item">
+                            <div class="story-thumbnail">
+                                <div class="placeholder-image">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="story-info">
+                                <h4 class="story-item-title">Hidden Waterfalls</h4>
+                                <p class="story-item-meta">March 10, 2024</p>
+                            </div>
+                        </article>
+                        <article class="story-item">
+                            <div class="story-thumbnail">
+                                <div class="placeholder-image">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="story-info">
+                                <h4 class="story-item-title">Mountain Photography</h4>
+                                <p class="story-item-meta">March 8, 2024</p>
+                            </div>
+                        </article>
+                        <article class="story-item">
+                            <div class="story-thumbnail">
+                                <div class="placeholder-image">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2 12C2 8.22876 4.23929 5 8 5H16C19.7608 5 22 8.22876 22 12C22 15.7712 19.7608 19 16 19H8C4.23929 19 2 15.7712 2 12Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="story-info">
+                                <h4 class="story-item-title">Cultural Festivals</h4>
+                                <p class="story-item-meta">March 5, 2024</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trekker's Highlights -->
+        <section class="highlights">
+            <div class="container">
+                <h2 class="section-title">Trekker's Highlights</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-item testimonial">
+                        <div class="testimonial-content">
+                            <div class="user-info">
+                                <div class="user-avatar">
+                                    <div class="placeholder-image">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                                            <path d="M6 20C6 16 8 14 12 14C16 14 18 16 18 20" stroke="currentColor"
+                                                stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="user-details">
+                                    <h4 class="user-name">Sarah Chen</h4>
+                                    <div class="rating">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">
+                                "The hidden gem tours completely exceeded my expectations. Each destination felt
+                                authentic
+                                and untouched by mass tourism. Simply magical!"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="highlight-item image">
+                        <div class="highlight-image">
+                            <div class="placeholder-image">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M16 6L12 2L8 6" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                                <span>Adventure Awaits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-item video">
+                        <div class="video-thumbnail">
+                            <div class="placeholder-image">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <path d="M10 9L16 12L10 15V9Z" fill="currentColor" />
+                                </svg>
+                                <span>Video Journey</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlights-cta">
+                    <button class="outline-button">See more highlights</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Get Your Travel Inspiration</h2>
+                <p class="newsletter-description">
+                    Subscribe to our newsletter and receive exclusive travel tips, hidden destination guides,
+                    and special offers delivered to your inbox.
+                </p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" class="email-input">
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <h3>Travel Explorer</h3>
+                    </div>
+                    <p class="footer-description">
+                        Discover the world's hidden wonders through authentic travel experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 2H15C13.8954 2 13 2.89543 13 4V6H10V9H13V17H16V9H18.5L19 6H16V4C16 3.44772 16.4477 3 17 3H18C18.5523 3 19 3.44772 19 4V6H20V9H19V17H16V9H13V6H16V4H17H18Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28445C14.0247 3.6117 13.2884 4.19439 12.773 4.95372C12.2575 5.71305 11.9877 6.61553 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z"
+                                    stroke="currentColor" stroke-width="2" fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">About Us</h4>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Travel Interests</h4>
+                        <ul>
+                            <li><a href="#">Adventure Travel</a></li>
+                            <li><a href="#">Cultural Tours</a></li>
+                            <li><a href="#">Food & Drink</a></li>
+                            <li><a href="#">Photography</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Top Destinations</h4>
+                        <ul>
+                            <li><a href="#">Japan</a></li>
+                            <li><a href="#">Greece</a></li>
+                            <li><a href="#">Italy</a></li>
+                            <li><a href="#">Thailand</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Travel Guides</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Travel Explorer. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
