@@ -1,7 +1,7 @@
 APUNTES:
 Verticales
 para moviles perqueños 0 - 480 px 
-para moviles mediano de 481 -900px
+para movilsies mediano de 481 -900px
 para moviles grandes de 601 - 900px
 
 

@@ -326,3 +326,45 @@ window.addEventListener('scroll', throttle(() => {
 
     lastScrollY = currentScrollY;
 }, 16)); // ~60fps
+
+// Theme Toggle Functionality
+const themeToggleBtn = document.getElementById('themeToggle');
+const moonIcon = document.querySelector('.moon-icon');
+const sunIcon = document.querySelector('.sun-icon');
+
+// Check for saved user preference, if any, on load of the website
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add('dark-mode');
+    showSunIcon();
+}
+
+function showSunIcon() {
+    if (moonIcon && sunIcon) {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+    }
+}
+
+function showMoonIcon() {
+    if (moonIcon && sunIcon) {
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+    }
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+            showSunIcon();
+            localStorage.setItem('theme', 'dark');
+        } else {
+            showMoonIcon();
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
