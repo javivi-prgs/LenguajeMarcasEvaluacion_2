@@ -1,0 +1,859 @@
+:root {
+    --primary: #FFD700;
+    /* Cheese Yellow */
+    --primary-dark: #FFA500;
+    --accent: #FF4040;
+    /* Heart Red */
+    --bg-dark: #121212;
+    --bg-card: #1E1E1E;
+    --text-white: #FFFFFF;
+    --text-gray: #B0B0B0;
+    --nav-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    height: var(--nav-height);
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 7px;
+}
+
+.brand-name {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    background-color: #ffe033;
+    /* Slightly lighter yellow on hover */
+    color: var(--bg-dark) !important;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding-top: 380px;
+    /* 150px * 2.5 = 375px. Clear the drip! */
+    padding-bottom: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Don't vertically center, start from top to respect padding */
+    text-align: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-dark) 70%);
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Store Badges */
+.download-badges {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.store-badge img {
+    height: 70px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.store-badge:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Melted Cheese Drip Effect */
+/* Melted Cheese Drip Effect - New Robust Method */
+.cheese-drip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    /* Tall yellow header area */
+    background-color: var(--primary);
+    /* Solid yellow */
+    /* Use mask to create the wavy bottom edge */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L1440,0 L1440,220 C1120,300 1020,100 720,220 C420,340 320,140 0,220 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L1440,0 L1440,220 C1120,300 1020,100 720,220 C420,340 320,140 0,220 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+    /* Drop shadow is tricky with mask, so we use filter on the container or a pseudo-element if needed. 
+       For simplicity and robustness, we skip the shadow on the wave edge for now or use a separate img element approach
+       if shadow is critical. The user asked for "unamoslo", solid is priority. */
+}
+
+/* Use a pseudo-element for the visual yellow block to handle scaling nicely if mask fails,
+   but mask is best for 'shaped container'. Let's stick to the previous img approach but w/o repeat-x artifacts
+   by making it a single stretchable block or using the SVG as a separator. 
+   
+   Actually, the user wants "unamoslo todo" (join everything). 
+   The best way is a solid yellow block that takes the top 0-200px, 
+   and the wave image positioned at the bottom of that block.
+*/
+
+.cheese-drip {
+    /* Reset */
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    /* Deep header */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFD700' fill-opacity='1' d='M0,0 L1440,0 L1440,200 C1120,320 1020,100 720,220 C420,340 320,140 0,260 Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    /* Stretch to fill */
+    background-position: top center;
+    z-index: 0;
+    filter: drop-shadow(0 10px 0px rgba(218, 165, 32, 0.2));
+}
+
+/* Hero Visual & Phone Mockup */
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.phone-mockup {
+    width: 320px;
+    height: 640px;
+    background: #000;
+    border-radius: 45px;
+    border: 10px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transform: rotate(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.phone-mockup:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.screen-content {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Map Screen Mockup */
+.map-screen {
+    padding: 0;
+    background: #232323;
+}
+
+.map-grid {
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: perspective(500px) rotateX(20deg);
+}
+
+.user-marker {
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3);
+    z-index: 10;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    animation: map-pulse 3s infinite ease-out;
+}
+
+.pulse-ring.delay {
+    animation-delay: 1.5s;
+}
+
+@keyframes map-pulse {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+.map-pin {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: pop-in 0.5s ease-out backwards;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.map-pin:hover {
+    transform: scale(1.2);
+}
+
+.pin-1 {
+    top: 30%;
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+.pin-2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 1.2s;
+}
+
+.pin-3 {
+    top: 20%;
+    right: 30%;
+    animation-delay: 2.0s;
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.map-ui-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Floating Cheese Animation */
+.floating-cheese {
+    position: absolute;
+    font-size: 4rem;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.cheese-1 {
+    top: 5%;
+    right: 15%;
+    animation-delay: 0s;
+    font-size: 5rem;
+    transform: rotate(10deg);
+}
+
+.cheese-2 {
+    bottom: 15%;
+    left: 0%;
+    animation-delay: 2s;
+    font-size: 3rem;
+}
+
+.cheese-3 {
+    top: 40%;
+    right: -5%;
+    animation-delay: 4s;
+    font-size: 2.5rem;
+    filter: blur(2px);
+}
+
+.cheese-4 {
+    bottom: 50%;
+    left: 20%;
+    animation-delay: 1s;
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Features Section */
+.features {
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background: #151515;
+    align-items: center;
+    /* Center the feature items horizontally */
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center content within the item */
+    gap: 80px;
+    /* Increase gap slightly for breathing room but kept constrained */
+    max-width: 1000px;
+    /* Constrain width so it doesn't stretch too far */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-item h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.feature-item p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 450px;
+    /* Slightly wider text block */
+}
+
+/* Radar Animation */
+.radar-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.05);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.1);
+}
+
+.radar-scan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.5) 0%, transparent 50%);
+    transform-origin: top left;
+    animation: radar-spin 2s linear infinite;
+    border-right: 1px solid rgba(255, 215, 0, 0.8);
+    box-shadow: 5px 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.radar-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+    animation: fade-in-out 3s infinite;
+}
+
+.dot-1 {
+    top: 30%;
+    right: 30%;
+    animation-delay: 0.5s;
+}
+
+.dot-2 {
+    bottom: 30%;
+    left: 40%;
+    animation-delay: 1.2s;
+}
+
+.dot-3 {
+    top: 20%;
+    left: 20%;
+    animation-delay: 2.0s;
+}
+
+@keyframes radar-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade-in-out {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Chat Bubbles */
+.mock-chat {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bubble {
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    max-width: 80%;
+    position: relative;
+}
+
+.bubble.received {
+    background: var(--bg-card);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.bubble.sent {
+    background: var(--primary);
+    color: var(--bg-dark);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    font-weight: 500;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    padding: 100px 5%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #2a2200 100%);
+}
+
+.download-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.download-section .btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 150px;
+        /* Less padding on mobile */
+        height: auto;
+    }
+
+    .hero-content {
+        margin-top: 50px;
+        /* Push content down manually */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    /* Reduce drip height on mobile so it doesn't cover everything */
+    .cheese-drip {
+        height: 200px;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .feature-item {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .radar-container,
+    .mock-chat {
+        margin: 0 auto;
+    }
+
+    /* Gallery Mobile Fix: 2 columns, smaller phones */
+    .gallery-grid {
+        display: grid;
+        /* Switch to grid for easy 2-col */
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        /* Tighter gap */
+        padding: 0 10px;
+    }
+
+    .phone-placeholder {
+        width: 100%;
+        /* Fill the grid cell */
+        height: auto;
+        /* Auto height based on aspect ratio */
+        aspect-ratio: 9/19;
+        /* Maintain modern phone ratio */
+        border-width: 4px;
+        /* Thinner border */
+        border-radius: 20px;
+        /* Smaller radius */
+    }
+
+    .notch {
+        height: 15px;
+        /* Smaller notch */
+    }
+
+    .screen-placeholder span {
+        font-size: 0.7rem;
+        /* Smaller text */
+    }
+}
+
+/* Force override for Gallery Responsiveness */
+@media (max-width: 768px) {
+    .gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .phone-placeholder {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        aspect-ratio: 9/19 !important;
+        margin: 0 !important;
+    }
+
+    /* Ensure they don't disappear */
+    .gallery {
+        overflow: visible !important;
+    }
+}
+
+
+
+/* --- New Sections Styles --- */
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--text-white);
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 100px 5%;
+    background: var(--bg-dark);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.step-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.step-card p {
+    color: var(--text-gray);
+}
+
+/* Gallery / Placeholders */
+.gallery {
+    padding: 100px 5%;
+    background: #151515;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.phone-placeholder {
+    width: 280px;
+    height: 580px;
+    background: #000;
+    border-radius: 35px;
+    border: 8px solid #2a2a2a;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.phone-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.notch {
+    width: 50%;
+    height: 25px;
+    background: #2a2a2a;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+
+.screen-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.screen-placeholder span {
+    opacity: 0.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Premium Section */
+.premium-promo {
+    padding: 80px 5%;
+    background: linear-gradient(90deg, #121212 0%, #2a2200 50%, #121212 100%);
+    text-align: center;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.premium-content h2 {
+    color: var(--primary);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.premium-content p {
+    color: white;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
