@@ -842,11 +842,10 @@ footer {
     border: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
-.screen-placeholder span {
-    opacity: 0.5;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+.screen-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Premium Section */
@@ -900,7 +899,7 @@ footer {
     /* Adjust Gallery for small screens: 2-Column Grid ("2 en 2") */
     .gallery-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
         gap: 15px !important;
         overflow-x: visible;
         scroll-snap-type: none;
