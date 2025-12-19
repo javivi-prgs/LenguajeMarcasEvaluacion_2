@@ -702,7 +702,7 @@ footer {
 @media (max-width: 768px) {
     .gallery-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 4fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
         gap: 15px !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
@@ -795,10 +795,10 @@ footer {
 }
 
 .gallery-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+        gap: 40px;
     margin-top: 50px;
 }
 
