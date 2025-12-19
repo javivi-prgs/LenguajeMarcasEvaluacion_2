@@ -796,9 +796,9 @@ footer {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, min-content);
+    grid-template-columns: repeat(2, min-content);
     justify-content: center;
-        gap: 40px;
+    gap: 40px;
     margin-top: 50px;
 }
 
@@ -1037,7 +1037,12 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 2fr) !important;
+        grid-template-columns: repeat(2, min-content) !important;
+    }
+
+    .phone-placeholder {
+        width: 280px !important;
+        margin: 0 auto !important;
     }
 
     /* Portrait: Tablets/Large Phones */
@@ -1084,5 +1089,15 @@ footer {
             /* Smaller mockup to fit landscape height */
             height: 480px;
         }
+    }
+}
+
+/* Pantallas Grandes (Desktop XL) */
+@media (min-width: 1300px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, min-content) !important;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
