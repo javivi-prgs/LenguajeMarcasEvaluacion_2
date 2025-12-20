@@ -668,10 +668,10 @@ footer {
     /* Removed legacy Grid overrides */
 
     .phone-placeholder {
-        width: 300px;
+        width: 320px;
         /* Increased from 280px */
         height: auto;
-        aspect-ratio: 9/21;
+        aspect-ratio: 10/21;
         /* Even taller aspect ratio (was 9/19) */
     }
 }
@@ -784,17 +784,17 @@ footer {
 
 /* Ensure phone placeholder fits nicely */
 .carousel-slide .phone-placeholder {
-    width: 90%;
+    width: 100%;
     margin: 0;
 }
 
 
 
 .phone-placeholder {
-    width: 300px;
+    width: 30px;
     /* Reduced to 300px as requested for large devices */
     height: auto;
-    aspect-ratio: 9/16;
+    aspect-ratio: 10/21;
     /* background: #000; Removed as requested */
     border-radius: 35px;
     border: 8px solid #2a2a2a;
@@ -874,6 +874,19 @@ footer {
     .section-title {
         font-size: 1.8rem;
         /* Reduced from 2rem */
+    }
+
+    .phone-placeholder {
+        width: 30px;
+        /* Reduced to 300px as requested for large devices */
+        height: auto;
+        aspect-ratio: 10/21;
+        /* background: #000; Removed as requested */
+        border-radius: 35px;
+        border: 8px solid #2a2a2a;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
     }
 
     /* Carousel handles mobile layout */
