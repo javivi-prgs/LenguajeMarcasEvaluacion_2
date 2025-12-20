@@ -668,7 +668,7 @@ footer {
     /* Removed legacy Grid overrides */
 
     .phone-placeholder {
-        width: 320px;
+        width: 300px;
         /* Increased from 280px */
         height: auto;
         aspect-ratio: 9/21;
@@ -784,7 +784,7 @@ footer {
 
 /* Ensure phone placeholder fits nicely */
 .carousel-slide .phone-placeholder {
-    width: 100%;
+    width: 90%;
     margin: 0;
 }
 
