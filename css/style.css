@@ -791,7 +791,7 @@ footer {
 
 
 .phone-placeholder {
-    width: 30px;
+    width: 300px;
     /* Reduced to 300px as requested for large devices */
     height: auto;
     aspect-ratio: 10/21;
@@ -877,7 +877,7 @@ footer {
     }
 
     .phone-placeholder {
-        width: 30px;
+        width: 300px;
         /* Reduced to 300px as requested for large devices */
         height: auto;
         aspect-ratio: 10/21;
