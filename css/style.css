@@ -26,26 +26,18 @@ body {
 }
 
 /* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    height: var(--nav-height);
-    background: rgba(18, 18, 18, 0.8);
+/* Navbar Enhancements */
+.custom-navbar {
+    background: rgba(18, 18, 18, 0.95);
+    /* Slightly darker/more opacity for visibility */
     backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
+/* Logo adjustments handled by utility classes, just keeping specific img styles */
 
 .nav-logo {
     height: 40px;
@@ -61,53 +53,41 @@ body {
     letter-spacing: 1px;
 }
 
-.nav-links a {
-    color: var(--text-white);
-    text-decoration: none;
-    margin-left: 2rem;
+.nav-link {
     font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-white) !important;
+    /* Override bootstrap */
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--primary);
+.nav-link:hover {
+    color: var(--primary) !important;
 }
 
+/* Button Overrides/Enhancements */
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--bg-dark);
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: var(--bg-dark) !important;
     font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-    cursor: pointer;
 }
 
 .btn-primary:hover {
+    background-color: #ffe033 !important;
+    border-color: #ffe033 !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-    background-color: #ffe033;
-    /* Slightly lighter yellow on hover */
-    color: var(--bg-dark) !important;
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
     min-height: 100vh;
-    padding-top: 380px;
-    /* 150px * 2.5 = 375px. Clear the drip! */
-    padding-bottom: 100px;
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* Don't vertically center, start from top to respect padding */
-    text-align: center;
-    gap: 40px;
+    padding-top: 120px;
+    /* Reduced since navbar is handled better */
+    padding-bottom: 50px;
+    /* Flex alignment handled by Bootstrap classes */
     position: relative;
     overflow: hidden;
     background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-dark) 70%);
@@ -430,44 +410,16 @@ body {
 
 /* Features Section */
 .features {
-    padding: 100px 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
     background: #151515;
-    align-items: center;
-    /* Center the feature items horizontally */
+    /* Keep custom dark background */
 }
 
-.feature-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Center content within the item */
-    gap: 80px;
-    /* Increase gap slightly for breathing room but kept constrained */
-    max-width: 1000px;
-    /* Constrain width so it doesn't stretch too far */
-    width: 100%;
-    margin: 0 auto;
-}
-
-.feature-item.reverse {
-    flex-direction: row-reverse;
-}
-
-.feature-item h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
-}
-
+/* Grid handled by Bootstrap */
 .feature-item p {
     font-size: 1.2rem;
     color: var(--text-gray);
-    max-width: 450px;
-    /* Slightly wider text block */
 }
+
 
 /* Radar Animation */
 .radar-container {
@@ -604,7 +556,10 @@ footer {
 
 
 /* Responsive */
+/* Responsive - Mostly handled by Bootstrap now */
 @media (max-width: 768px) {
+
+    /* Custom tweaks only */
     .navbar {
         padding: 1rem 5%;
     }
@@ -627,20 +582,8 @@ footer {
         padding: 0.6rem 1rem;
     }
 
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 150px;
-        /* Less padding on mobile */
-        height: auto;
-    }
-
-    .hero-content {
-        margin-top: 50px;
-        /* Push content down manually */
-    }
-
-    .hero-content h1 {
+    /* Hero content font size tweaks for mobile */
+    .hero-container h1 {
         font-size: 3rem;
     }
 
@@ -693,25 +636,21 @@ footer {
 
 /* How It Works */
 .how-it-works {
-    padding: 100px 5%;
-    background: var(--bg-dark);
+    /* Padding handled by py-5, but ensure background matches theme if overridden */
+    background-color: var(--bg-dark) !important;
 }
 
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* How It Works - Grid handled by Bootstrap */
 
+
+/* Step Card adjustments for Bootstrap grid */
 .step-card {
     background: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
     transition: transform 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Standardize border */
+    /* Padding handled by classes or kept here */
+    border-radius: 20px;
 }
 
 .step-card:hover {
@@ -749,44 +688,7 @@ footer {
     text-align: center;
 }
 
-.carousel-container {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-}
-
-.carousel-mask {
-    width: 100%;
-    max-width: 350px;
-    /* Adjusted back to 350px for smaller phone */
-    overflow: hidden;
-    position: relative;
-    /* Optional: Add some padding if shadow cut-off happens, or handle in slide */
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-/* Ensure phone placeholder fits nicely */
-.carousel-slide .phone-placeholder {
-    width: 100%;
-    margin: 0;
-}
+/* Old carousel styles removed */
 
 
 
