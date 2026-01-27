@@ -1,9 +1,7 @@
 :root {
     --primary: #FFD700;
-    /* Cheese Yellow */
     --primary-dark: #FFA500;
     --accent: #FF4040;
-    /* Heart Red */
     --bg-dark: #121212;
     --bg-card: #1E1E1E;
     --text-white: #FFFFFF;
@@ -26,18 +24,12 @@ body {
 }
 
 /* Navbar */
-/* Navbar Enhancements */
 .custom-navbar {
     background: rgba(18, 18, 18, 0.95);
-    /* Slightly darker/more opacity for visibility */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-block: 1rem;
 }
-
-
-/* Logo adjustments handled by utility classes, just keeping specific img styles */
 
 .nav-logo {
     height: 40px;
@@ -57,7 +49,6 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
     color: var(--text-white) !important;
-    /* Override bootstrap */
     transition: color 0.3s;
 }
 
@@ -65,7 +56,7 @@ body {
     color: var(--primary) !important;
 }
 
-/* Button Overrides/Enhancements */
+/* Buttons */
 .btn-primary {
     background-color: var(--primary) !important;
     border-color: var(--primary) !important;
@@ -80,14 +71,10 @@ body {
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
-/* Hero Section */
-/* Hero Section */
+/* Hero */
 .hero {
     min-height: 100vh;
-    padding-top: 120px;
-    /* Reduced since navbar is handled better */
-    padding-bottom: 50px;
-    /* Flex alignment handled by Bootstrap classes */
+    padding: 120px 0 50px;
     position: relative;
     overflow: hidden;
     background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-dark) 70%);
@@ -114,13 +101,10 @@ body {
 .hero-content p {
     font-size: 1.5rem;
     color: var(--text-gray);
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Store Badges */
 .download-badges {
     display: flex;
     gap: 30px;
@@ -137,61 +121,18 @@ body {
     transform: scale(1.1) rotate(2deg);
 }
 
-/* Melted Cheese Drip Effect */
-/* Melted Cheese Drip Effect - New Robust Method */
 .cheese-drip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    /* Tall yellow header area */
-    background-color: var(--primary);
-    /* Solid yellow */
-    /* Use mask to create the wavy bottom edge */
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L1440,0 L1440,220 C1120,300 1020,100 720,220 C420,340 320,140 0,220 Z' fill='black'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L1440,0 L1440,220 C1120,300 1020,100 720,220 C420,340 320,140 0,220 Z' fill='black'/%3E%3C/svg%3E");
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    z-index: 0;
-    pointer-events: none;
-    /* Drop shadow is tricky with mask, so we use filter on the container or a pseudo-element if needed. 
-       For simplicity and robustness, we skip the shadow on the wave edge for now or use a separate img element approach
-       if shadow is critical. The user asked for "unamoslo", solid is priority. */
-}
-
-/* Use a pseudo-element for the visual yellow block to handle scaling nicely if mask fails,
-   but mask is best for 'shaped container'. Let's stick to the previous img approach but w/o repeat-x artifacts
-   by making it a single stretchable block or using the SVG as a separator. 
-   
-   Actually, the user wants "unamoslo todo" (join everything). 
-   The best way is a solid yellow block that takes the top 0-200px, 
-   and the wave image positioned at the bottom of that block.
-*/
-
-.cheese-drip {
-    /* Reset */
-    -webkit-mask-image: none;
-    mask-image: none;
-    background-color: transparent;
-
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 350px;
-    /* Deep header */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFD700' fill-opacity='1' d='M0,0 L1440,0 L1440,200 C1120,320 1020,100 720,220 C420,340 320,140 0,260 Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    /* Stretch to fill */
-    background-position: top center;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFD700' fill-opacity='1' d='M0,0 L1440,0 L1440,200 C1120,320 1020,100 720,220 C420,340 320,140 0,260 Z'%3E%3C/path%3E%3C/svg%3E") top center / 100% 100% no-repeat transparent;
     z-index: 0;
     filter: drop-shadow(0 10px 0px rgba(218, 165, 32, 0.2));
+    pointer-events: none;
 }
 
-/* Hero Visual & Phone Mockup */
 .hero-visual {
     flex: 1;
     position: relative;
@@ -223,16 +164,15 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
-    padding: 20px;
+    padding: 20px 20px 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 60px;
     position: relative;
     overflow: hidden;
 }
 
-/* Map Screen Mockup */
+/* Map Screen */
 .map-screen {
     padding: 0;
     background: #232323;
@@ -241,8 +181,7 @@ body {
 .map-grid {
     width: 200%;
     height: 200%;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     position: absolute;
@@ -354,12 +293,12 @@ body {
     border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-/* Floating Cheese Animation */
+/* Animations */
 .floating-cheese {
     position: absolute;
     font-size: 4rem;
-    animation: float 6s ease-in-out infinite;
     z-index: 1;
+    animation: float 6s ease-in-out infinite;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
@@ -395,33 +334,27 @@ body {
 }
 
 @keyframes float {
-    0% {
+
+    0%,
+    100% {
         transform: translateY(0px) rotate(0deg);
     }
 
     50% {
         transform: translateY(-20px) rotate(5deg);
     }
-
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
 }
 
-/* Features Section */
+/* Features */
 .features {
     background: #151515;
-    /* Keep custom dark background */
 }
 
-/* Grid handled by Bootstrap */
-.feature-item p {
+.features .feature-item p {
     font-size: 1.2rem;
     color: var(--text-gray);
 }
 
-
-/* Radar Animation */
 .radar-container {
     width: 300px;
     height: 300px;
@@ -444,6 +377,16 @@ body {
     animation: radar-spin 2s linear infinite;
     border-right: 1px solid rgba(255, 215, 0, 0.8);
     box-shadow: 5px 0 10px rgba(255, 215, 0, 0.2);
+}
+
+@keyframes radar-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .radar-dot {
@@ -474,16 +417,6 @@ body {
     animation-delay: 2.0s;
 }
 
-@keyframes radar-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes fade-in-out {
 
     0%,
@@ -498,7 +431,7 @@ body {
     }
 }
 
-/* Chat Bubbles */
+/* Chat */
 .mock-chat {
     width: 300px;
     display: flex;
@@ -528,128 +461,22 @@ body {
     font-weight: 500;
 }
 
-/* Download Section */
-.download-section {
-    text-align: center;
-    padding: 100px 5%;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, #2a2200 100%);
-}
-
-.download-section h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.download-section .btn-primary {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    padding: 1rem 3rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-gray);
-}
-
-
-/* Responsive */
-/* Responsive - Mostly handled by Bootstrap now */
-@media (max-width: 768px) {
-
-    /* Custom tweaks only */
-    .navbar {
-        padding: 1rem 5%;
-    }
-
-    .nav-links {
-        display: block;
-        /* Show container */
-    }
-
-    .nav-links a:not(.btn-primary) {
-        display: none;
-        /* Hide regular text links */
-    }
-
-    .nav-links .btn-primary {
-        margin-left: 0;
-        /* Reset margin since it's the only item */
-        font-size: 0.9rem;
-        /* Slightly smaller for mobile */
-        padding: 0.6rem 1rem;
-    }
-
-    /* Hero content font size tweaks for mobile */
-    .hero-container h1 {
-        font-size: 3rem;
-    }
-
-    /* Reduce drip height on mobile so it doesn't cover everything */
-    .cheese-drip {
-        height: 200px;
-    }
-
-    .cta-group {
-        justify-content: center;
-    }
-
-    .feature-item {
-        flex-direction: column !important;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .radar-container,
-    .mock-chat {
-        margin: 0 auto;
-    }
-
-    /* Carousel handles responsiveness naturally now */
-    /* Removed legacy Grid overrides */
-
-    .phone-placeholder {
-        width: 320px;
-        /* Increased from 280px */
-        height: auto;
-        aspect-ratio: 10/21;
-        /* Even taller aspect ratio (was 9/19) */
-    }
-}
-
-/* Carousel handles responsiveness naturally now */
-
-
-
-/* --- New Sections Styles --- */
-
-/* Section Titles */
+/* Sections */
 .section-title {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    /* Reduced from 3rem to decrease separation */
     color: var(--text-white);
 }
 
-/* How It Works */
 .how-it-works {
-    /* Padding handled by py-5, but ensure background matches theme if overridden */
     background-color: var(--bg-dark) !important;
 }
 
-/* How It Works - Grid handled by Bootstrap */
-
-
-/* Step Card adjustments for Bootstrap grid */
 .step-card {
     background: var(--bg-card);
     transition: transform 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Standardize border */
-    /* Padding handled by classes or kept here */
     border-radius: 20px;
 }
 
@@ -681,23 +508,16 @@ footer {
     color: var(--text-gray);
 }
 
-/* Gallery / Placeholders */
 .gallery {
     padding: 100px 5%;
     background: #151515;
     text-align: center;
 }
 
-/* Old carousel styles removed */
-
-
-
 .phone-placeholder {
     width: 300px;
-    /* Reduced to 300px as requested for large devices */
     height: auto;
     aspect-ratio: 10/21;
-    /* background: #000; Removed as requested */
     border-radius: 35px;
     border: 8px solid #2a2a2a;
     position: relative;
@@ -709,12 +529,9 @@ footer {
     transform: scale(1.02);
 }
 
-
-
 .screen-placeholder {
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(135deg, #1E1E1E 0%, #121212 100%); Removed as requested */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -727,16 +544,13 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: fill;
-    /* Forces full image to be seen with no empty space (may stretch) */
 }
 
-/* Premium Section */
 .premium-promo {
     padding: 80px 5%;
     background: linear-gradient(90deg, #121212 0%, #2a2200 50%, #121212 100%);
     text-align: center;
-    border-top: 1px solid rgba(255, 215, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    border-block: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .premium-content h2 {
@@ -753,64 +567,143 @@ footer {
     margin: 0 auto 2rem;
 }
 
-/* --- Responsive Styles (Requested Dimensions) --- */
+.download-section {
+    text-align: center;
+    padding: 100px 5%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #2a2200 100%);
+}
 
-/* Moviles Pequeños (0 - 480px) */
+.download-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.download-section .btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+}
+
+.carousel-btn {
+    position: static;
+    transform: none;
+    background: rgba(128, 128, 128, 0.4);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+    font-family: monospace;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    background: rgba(128, 128, 128, 0.8);
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        display: block;
+    }
+
+    .nav-links a:not(.btn-primary) {
+        display: none;
+    }
+
+    .nav-links .btn-primary {
+        margin-left: 0;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .hero-container h1 {
+        font-size: 3rem;
+    }
+
+    .cheese-drip {
+        height: 200px;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .feature-item {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .radar-container,
+    .mock-chat {
+        margin: 0 auto;
+    }
+
+    .phone-placeholder {
+        width: 320px;
+        height: auto;
+        aspect-ratio: 10/21;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         width: 100%;
         padding: 0 10px;
-
     }
 
-    .hero-content h1 {
+    .hero-content h1,
+    .section-title {
         font-size: 1.8rem;
-        /* Reduced from 2.2rem */
     }
 
     .hero-content p {
         font-size: 0.9rem;
-        /* Reduced from 1rem */
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-        /* Reduced from 2rem */
     }
 
     .phone-placeholder {
         width: 300px;
-        /* Reduced to 300px as requested for large devices */
         height: auto;
         aspect-ratio: 10/21;
-        /* background: #000; Removed as requested */
-        border-radius: 35px;
-        border: 8px solid #2a2a2a;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s;
     }
 
-    /* Carousel handles mobile layout */
-    /* Portrait: Optimize vertical rhythm */
+    /* Portrait */
     @media (orientation: portrait) {
         .hero {
             padding-top: 100px;
-            /* Reduced from 120px */
             padding-bottom: 40px;
             min-height: auto;
         }
 
         .cheese-drip {
             height: 120px;
-            /* Reduced from 150px */
         }
 
         .phone-mockup {
             width: 180px;
-            /* Reduced further from 220px */
             height: 360px;
-            /* Reduced further from 440px */
         }
 
         .feature-item {
@@ -819,7 +712,7 @@ footer {
         }
     }
 
-    /* Landscape: Optimize vertical space */
+    /* Landscape */
     @media (orientation: landscape) {
         .hero {
             padding-top: 80px;
@@ -832,30 +725,24 @@ footer {
 
         .phone-mockup {
             display: none;
-            /* Hide huge mockup in short landscape views to save space */
         }
 
         .cheese-drip {
             height: 80px;
-            /* Reduced from 100px */
         }
 
         .navbar {
             height: 50px;
-            /* Even smaller navbar */
         }
     }
 }
 
-/* Moviles Medianos (481px - 600px) */
+/* Medium Mobile */
 @media (min-width: 481px) and (max-width: 600px) {
     .hero-content h1 {
         font-size: 2.8rem;
     }
 
-
-
-    /* Portrait */
     @media (orientation: portrait) {
         .hero {
             padding-top: 140px;
@@ -867,7 +754,6 @@ footer {
         }
     }
 
-    /* Landscape */
     @media (orientation: landscape) {
         .hero {
             flex-direction: row;
@@ -895,7 +781,7 @@ footer {
     }
 }
 
-/* Moviles Grandes (601px - 900px) */
+/* Large Mobile/Tablet */
 @media (min-width: 601px) and (max-width: 900px) {
     .hero-content h1 {
         font-size: 3.5rem;
@@ -905,7 +791,6 @@ footer {
         grid-template-columns: repeat(2, min-content) !important;
     }
 
-    /* Portrait: Tablets/Large Phones */
     @media (orientation: portrait) {
         .hero-content {
             padding: 0 5%;
@@ -916,13 +801,11 @@ footer {
         }
     }
 
-    /* Landscape */
     @media (orientation: landscape) {
         .hero {
             flex-direction: row;
             text-align: left;
             align-items: flex-start;
-            /* Align top */
             padding-top: 120px;
         }
 
@@ -946,46 +829,55 @@ footer {
 
         .phone-mockup {
             width: 240px;
-            /* Smaller mockup to fit landscape height */
             height: 480px;
         }
     }
 }
 
-/* Pantallas Grandes (Desktop XL) */
-@media (min-width: 1300px) {
-    .gallery-grid {
-        grid-template-columns: repeat(4, min-content) !important;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
+/* --- Desktop Carousel Grid Transformation --- */
+/* Range 992px - 1400px: Force 2x2 Grid (2 up, 2 down) */
+@media (min-width: 992px) {
+    #cheeseCarousel .carousel-inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        justify-items: center;
+        overflow: visible;
+        padding-bottom: 20px;
+    }
+
+    #cheeseCarousel .carousel-item {
+        display: block !important;
+        width: auto !important;
+        margin-right: 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Hide controls on desktop */
+    #cheeseCarousel .carousel-control-prev,
+    #cheeseCarousel .carousel-control-next {
+        display: none;
+    }
+
+    .phone-placeholder {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 }
 
-/* Carousel Buttons */
-/* Carousel Buttons */
-.carousel-btn {
-    position: static;
-    transform: none;
-    background: rgba(128, 128, 128, 0.4);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s, transform 0.2s;
-    font-family: monospace;
-    flex-shrink: 0;
-    padding: 0;
-    line-height: 1;
-}
+/* Range 1400px+: Force 1x4 Grid (All in one row) */
+@media (min-width: 1400px) {
+    #cheeseCarousel .carousel-inner {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1400px;
+        margin-inline: auto;
+    }
 
-.carousel-btn:hover {
-    background: rgba(128, 128, 128, 0.8);
-    transform: scale(1.1);
+    .phone-placeholder {
+        max-width: 280px;
+    }
 }
