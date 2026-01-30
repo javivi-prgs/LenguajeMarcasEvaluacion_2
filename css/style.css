@@ -9,11 +9,7 @@
     --nav-height: 80px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 body {
     font-family: 'Outfit', sans-serif;
@@ -24,30 +20,14 @@ body {
 }
 
 /* Navbar */
+/* Navbar Overrides */
 .custom-navbar {
     background: rgba(18, 18, 18, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-block: 1rem;
-}
-
-.nav-logo {
-    height: 40px;
-    width: auto;
-    border-radius: 7px;
-}
-
-.brand-name {
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .nav-link {
-    font-weight: 500;
-    font-size: 1.1rem;
     color: var(--text-white) !important;
     transition: color 0.3s;
 }
@@ -57,6 +37,7 @@ body {
 }
 
 /* Buttons */
+/* Button Overrides */
 .btn-primary {
     background-color: var(--primary) !important;
     border-color: var(--primary) !important;
@@ -80,37 +61,18 @@ body {
     background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-dark) 70%);
 }
 
-.hero-content {
-    max-width: 900px;
-    z-index: 2;
-    margin: 0 auto;
-}
 
-.hero-content h1 {
-    font-size: 5rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px;
-}
+
+
 
 .highlight {
     color: var(--primary);
     text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    color: var(--text-gray);
-    margin: 0 auto 3rem;
-    max-width: 700px;
-}
 
-.download-badges {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+
+
 
 .store-badge img {
     height: 50px;
@@ -624,19 +586,7 @@ footer {
         padding: 1rem 5%;
     }
 
-    .nav-links {
-        display: block;
-    }
 
-    .nav-links a:not(.btn-primary) {
-        display: none;
-    }
-
-    .nav-links .btn-primary {
-        margin-left: 0;
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-    }
 
     .hero-container h1 {
         font-size: 3rem;
@@ -787,18 +737,14 @@ footer {
         font-size: 3.5rem;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, min-content) !important;
-    }
+
 
     @media (orientation: portrait) {
         .hero-content {
             padding: 0 5%;
         }
 
-        .steps-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+
     }
 
     @media (orientation: landscape) {
@@ -819,9 +765,7 @@ footer {
             margin-left: 0;
         }
 
-        .download-badges {
-            justify-content: flex-start;
-        }
+
 
         .hero-visual {
             max-width: 45%;
