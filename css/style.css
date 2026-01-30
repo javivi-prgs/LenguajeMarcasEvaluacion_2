@@ -52,6 +52,20 @@ body {
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
+.bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--bg-dark) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-custom-card {
+    background-color: var(--bg-card);
+    color: var(--text-white);
+}
+
 /* Hero */
 .hero {
     min-height: 100vh;
@@ -865,4 +879,21 @@ footer {
     .phone-placeholder {
         max-width: 280px;
     }
+
+    /* Hide emojis when 4 phones are in a row */
+    .gallery-deco {
+        display: none !important;
+    }
+}
+
+/* Plan Cards Hover Effect */
+.plan-card {
+    border: 2px solid var(--bg-card) !important;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.plan-card:hover {
+    border-color: var(--primary) !important;
+    transform: translateY(-5px);
+    /* Optional: add subtle lift for better feel */
 }
