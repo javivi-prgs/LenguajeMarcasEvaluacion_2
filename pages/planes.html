@@ -15,60 +15,70 @@
 </head>
 
 <body class="p-4">
-    <div class="container">
-        <h2 class="text-center mb-5" style="color: var(--primary);">Nuestros Planes</h2>
+    <div class="container py-4">
+        <h2 class="text-center mb-5" style="color: var(--primary); font-weight: 900; font-size: 3rem;">Nuestros Planes
+        </h2>
         <div class="row g-4 justify-content-center">
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm bg-dark text-white plan-card"
-                    style="background-color: var(--bg-card) !important;">
+                <div class="card h-100 border-0 shadow-sm text-white plan-card"
+                    style="background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 24px;">
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title text-center mb-3">Gratis</h3>
+                        <h3 class="card-title text-center mb-3 fw-bold">Gratis</h3>
                         <div class="price text-center display-4 fw-bold mb-4" style="color: var(--primary);">0€</div>
                         <ul class="features-list list-unstyled mb-4 flex-grow-1">
-                            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Perfiles limitados</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>5 Super Cheese al día</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Chat con matches</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Perfiles limitados</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> 5 Super Cheese al día</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Chat con matches</li>
                         </ul>
-                        <button class="btn btn-outline-light w-100 rounded-pill mt-auto">Actual</button>
+                        <button class="btn btn-outline-light w-100 rounded-pill mt-auto py-3">Actual</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow bg-dark text-white plan-card"
-                    style="background-color: var(--bg-card) !important; border-width: 2px;">
+                <div class="card h-100 text-white plan-card"
+                    style="background: rgba(255, 215, 0, 0.05); backdrop-filter: blur(10px); border: 2px solid var(--primary); border-radius: 24px; transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);">
                     <div class="card-body p-4 d-flex flex-column">
-                        <div class="text-center mb-2"><span class="badge bg-primary text-dark">Más Popular</span></div>
-                        <h3 class="card-title text-center mb-3">Gold</h3>
+                        <div class="text-center mb-2"><span class="badge bg-primary text-dark fw-bold px-3">Más
+                                Popular</span></div>
+                        <h3 class="card-title text-center mb-3 fw-black">Gold</h3>
                         <div class="price text-center display-4 fw-bold mb-4" style="color: var(--primary);">14.99€<span
                                 class="fs-6 text-secondary">/mes</span></div>
                         <ul class="features-list list-unstyled mb-4 flex-grow-1">
-                            <li class="mb-2"><i class="bi bi-check2-all text-primary me-2"></i>Likes ilimitados</li>
-                            <li class="mb-2"><i class="bi bi-check2-all text-primary me-2"></i>Ver a quién le gustas
-                            </li>
-                            <li class="mb-2"><i class="bi bi-check2-all text-primary me-2"></i>Rebobinar (Rewind)</li>
-                            <li class="mb-2"><i class="bi bi-check2-all text-primary me-2"></i>10 Super Cheese al día
-                            </li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Likes ilimitados</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Ver a quién le gustas</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Rebobinar (Rewind)</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> 10 Super Cheese al día</li>
                         </ul>
-                        <button class="btn btn-primary w-100 rounded-pill fw-bold mt-auto">Elegir Gold</button>
+                        <button class="btn btn-primary w-100 rounded-pill fw-bold mt-auto py-3">Elegir Gold</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm bg-dark text-white plan-card"
-                    style="background-color: var(--bg-card) !important;">
+                <div class="card h-100 border-0 shadow-sm text-white plan-card"
+                    style="background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 24px;">
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title text-center mb-3">Platinum</h3>
+                        <h3 class="card-title text-center mb-3 fw-bold">Platinum</h3>
                         <div class="price text-center display-4 fw-bold mb-4" style="color: var(--primary);">39.99€<span
                                 class="fs-6 text-secondary">/mes</span></div>
                         <ul class="features-list list-unstyled mb-4 flex-grow-1">
-                            <li class="mb-2"><i class="bi bi-star-fill text-primary me-2"></i>Todo lo de Gold</li>
-                            <li class="mb-2"><i class="bi bi-star-fill text-primary me-2"></i>Mensaje antes de match
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Todo lo de Gold</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Mensaje antes de match</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Prioridad en likes</li>
+                            <li class="mb-3 d-flex align-items-center"><span
+                                    class="badge bg-primary rounded-circle p-1 me-2"></span> Ver confirmación lectura
                             </li>
-                            <li class="mb-2"><i class="bi bi-star-fill text-primary me-2"></i>Prioridad en likes</li>
-                            <li class="mb-2"><i class="bi bi-star-fill text-primary me-2"></i>Ver confirmación de
-                                lectura</li>
                         </ul>
-                        <button class="btn btn-outline-primary w-100 rounded-pill mt-auto">Elegir Platinum</button>
+                        <button class="btn btn-outline-primary w-100 rounded-pill mt-auto py-3">Elegir Platinum</button>
                     </div>
                 </div>
             </div>

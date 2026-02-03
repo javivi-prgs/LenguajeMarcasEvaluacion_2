@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <meta name="description" content="Cheese: La app de citas con radar. Encuentra el amor en tu radio.">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <img src="img/logo2.png" alt="Cheese Logo" class="nav-logo" width="40" height="40">
@@ -37,7 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="pages/contacto.html">Contáctanos</a>
                     </li>
-                    <li class="nav-item ms-lg-3">
+                    <li class="nav-item ms-xl-3">
                         <a href="#download" class="btn btn-primary rounded-pill px-4">Descargar</a>
                     </li>
                 </ul>
@@ -50,14 +53,16 @@
 
         <div class="container hero-container position-relative z-2">
             <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
-                    <h1 class="display-3 fw-bold mb-4">Encuentra a tu <span class="highlight textshadow">media naranja</span>...
-                        <br>o tu queso derretido 🧀
+                <div class="col-xl-6 text-center text-xl-start mb-5 mb-xl-0">
+                    <h1 class="display-2 fw-black mb-4 hero-title">
+                        Encuentra a tu <br>
+                        <span class="highlight-soulmate">media naranja...</span>
+                        <span class="text-white">o tu queso derretido</span>
                     </h1>
                     <p class="lead text-secondary mb-5">La app de citas más <strong>cremosa</strong>. Radar, Matches y
-                        cero tonterías. <br>¿Listo para el <em>match</em> perfecto?</p>
+                        cero tonterías. ¿Listo para el <em>match</em> perfecto?</p>
 
-                    <div class="d-flex justify-content-center justify-content-lg-start gap-4">
+                    <div class="d-flex justify-content-center justify-content-xl-start gap-4">
                         <a href="#" class="store-badge">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                                 alt="Descargar en App Store" height="60">
@@ -69,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 position-relative hero-visual d-flex justify-content-center">
+                <div class="col-xl-6 position-relative hero-visual d-flex justify-content-center">
                     <div class="phone-mockup">
                         <!-- Placeholder for App Screen using CSS -->
                         <div class="screen-content map-screen">
@@ -103,10 +108,17 @@
             <div class="row align-items-center mb-5 feature-item">
                 <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
                     <div class="radar-container">
+                        <div class="radar-circles">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="radar-grid"></div>
                         <div class="radar-scan"></div>
                         <div class="radar-dot dot-1"></div>
                         <div class="radar-dot dot-2"></div>
                         <div class="radar-dot dot-3"></div>
+                        <div class="user-center"></div>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-start">
@@ -135,7 +147,7 @@
 
     <!-- New Section: How it Works -->
     <!-- New Section: How it Works -->
-    <section class="how-it-works pt-5 pb-0 bg-dark">
+    <section class="how-it-works pt-5 pb-5 bg-dark">
         <div class="container pb-3">
             <h2 class="section-title text-center text-white mb-5">¿Cómo funciona?</h2>
             <div class="row g-4 text-center">
@@ -168,7 +180,7 @@
     <!-- New Section: Gallery (Placeholders) -->
     <section class="gallery">
         <h2 class="section-title">Un vistazo a la App</h2>
-        <div class="gallery-deco d-none d-lg-flex flex-column align-items-center gap-4">
+        <div class="gallery-deco d-none d-xl-flex flex-column align-items-center gap-4">
             <span class="deco-emoji">🧀</span>
             <span class="deco-emoji">✨</span>
             <div class="heart-pulse">❤️</div>
@@ -273,10 +285,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
