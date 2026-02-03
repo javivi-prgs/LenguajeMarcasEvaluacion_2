@@ -897,3 +897,9 @@ footer {
     transform: translateY(-5px);
     /* Optional: add subtle lift for better feel */
 }
+
+.textshadow{
+    text-shadow: #363636a3 1px 1px 2px;
+    color: #ffc800;
+    
+}
