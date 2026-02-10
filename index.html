@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animaciones.css">
     <meta name="description" content="Cheese: La app de citas con radar. Encuentra el amor en tu radio.">
 </head>
 
@@ -50,23 +51,25 @@
         </div>
     </nav>
 
-    <header class="hero d-flex align-items-center">
-        <div class="cheese-drip"></div>
+    <header class="hero d-flex align-items-center py-5 pt-md-250">
+        <div class="cheese-drip animate-drip"></div>
 
         <div class="container hero-container position-relative z-2">
             <div class="row align-items-center">
                 <div class="col-xl-6 text-center text-xl-start mb-5 mb-xl-0">
-                    <h1 class="display-2 fw-black mb-4 hero-title">
+                    <h1 class="display-2 fw-black mb-4 hero-title animate-fade-up">
                         Encuentra a tu <br>
                         <span class="highlight-soulmate">media naranja...</span>
                         <span class="text-white">o tu queso derretido</span>
                     </h1>
-                    <p class="lead text-secondary mb-5 mx-auto mx-xl-0">La app de citas más <strong>cremosa</strong>.
+                    <p class="lead text-secondary mb-5 mx-auto mx-xl-0 animate-fade-up"
+                        style="animation-delay: 0.2s; opacity: 0;">La app de citas más <strong>cremosa</strong>.
                         Radar, Matches y
                         cero tonterías. ¿Listo para el <em>match</em> perfecto?</p>
 
 
-                    <div class="d-flex justify-content-center justify-content-xl-start gap-4">
+                    <div class="d-flex justify-content-center justify-content-xl-start gap-4 animate-fade-up"
+                        style="animation-delay: 0.4s; opacity: 0;">
                         <a href="#" class="store-badge">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                                 alt="Descargar en App Store" height="60">
@@ -85,13 +88,16 @@
                         <div class="screen-content map-screen">
                             <div class="map-grid"></div>
                             <div class="user-marker">
-                                <div class="pulse-ring"></div>
-                                <div class="pulse-ring delay"></div>
+                                <div class="pulse-ring animate-pulse-ring"></div>
+                                <div class="pulse-ring animate-pulse-ring" style="animation-delay: 1.5s;"></div>
                             </div>
 
-                            <div class="map-pin pin-1" title="Ana">👩</div>
-                            <div class="map-pin pin-2" title="Luis">🧔</div>
-                            <div class="map-pin pin-3" title="Cris">👱‍♀️</div>
+                            <div class="map-pin pin-1 animate-pop-in" title="Ana" style="animation-delay: 0.5s;">👩
+                            </div>
+                            <div class="map-pin pin-2 animate-pop-in" title="Luis" style="animation-delay: 1.2s;">🧔
+                            </div>
+                            <div class="map-pin pin-3 animate-pop-in" title="Cris" style="animation-delay: 2.0s;">👱‍♀️
+                            </div>
 
                             <div class="map-ui-bottom">
                                 <span>Explorando... 🧀</span>
@@ -99,10 +105,10 @@
                         </div>
                     </div>
 
-                    <div class="floating-cheese cheese-1">🧀</div>
-                    <div class="floating-cheese cheese-2">❤️</div>
-                    <div class="floating-cheese cheese-3">🐁</div>
-                    <div class="floating-cheese cheese-4">🍷</div>
+                    <div class="floating-cheese cheese-1 animate-float">🧀</div>
+                    <div class="floating-cheese cheese-2 animate-float" style="animation-delay: 2s;">❤️</div>
+                    <div class="floating-cheese cheese-3 animate-float" style="animation-delay: 4s;">🐁</div>
+                    <div class="floating-cheese cheese-4 animate-float" style="animation-delay: 1s;">🍷</div>
                 </div>
             </div>
         </div>
@@ -119,10 +125,10 @@
                             <span></span>
                         </div>
                         <div class="radar-grid"></div>
-                        <div class="radar-scan"></div>
-                        <div class="radar-dot dot-1"></div>
-                        <div class="radar-dot dot-2"></div>
-                        <div class="radar-dot dot-3"></div>
+                        <div class="radar-scan animate-radar-sweep"></div>
+                        <div class="radar-dot dot-1 animate-radar-dot" style="animation-delay: 1.2s;"></div>
+                        <div class="radar-dot dot-2 animate-radar-dot" style="animation-delay: 2.8s;"></div>
+                        <div class="radar-dot dot-3 animate-radar-dot" style="animation-delay: 3.5s;"></div>
                         <div class="user-center"></div>
                     </div>
                 </div>
@@ -150,44 +156,41 @@
         </div>
     </section>
 
-    <section class="how-it-works pt-5 pb-5 bg-dark">
-        <div class="container pb-3">
-            <h2 class="section-title text-center text-white mb-5">¿Cómo funciona?</h2>
-            <div class="row g-4 text-center">
+    <section id="how-it-works" class="how-it-works">
+        <div class="container py-5">
+            <h2 class="section-title display-4 fw-black text-center text-white mb-5">¿Cómo funciona?</h2>
+            <div class="row g-4 pt-4">
                 <div class="col-md-4">
-                    <div class="step-card h-100 p-4">
+                    <div class="step-card h-100 text-center">
                         <div class="step-icon d-flex align-items-center justify-content-center">1</div>
-                        <h3>Crea tu Perfil</h3>
-                        <p>Sube tus mejores fotos (sí, esa con tu perro cuenta) y dinos qué tipo de queso... digo,
-                            persona buscas.</p>
+                        <h3 class="fw-bold text-white h4 mb-3">Crea tu Perfil</h3>
+                        <p class="text-secondary mb-0">Sube tus mejores fotos y dinos qué tipo de quesero eres. ¡Tu
+                            perfil es tu carta de presentación!</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="step-card h-100 p-4">
+                    <div class="step-card h-100 text-center">
                         <div class="step-icon d-flex align-items-center justify-content-center">2</div>
-                        <h3>Activa el Radar</h3>
-                        <p>Ajusta la distancia. ¿Buscas amor en tu barrio o aventura en la ciudad de al lado?</p>
+                        <h3 class="fw-bold text-white h4 mb-3">Activa el Radar</h3>
+                        <p class="text-secondary mb-0">Ajusta la distancia y detecta almas queseras cerca de ti en
+                            tiempo real.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="step-card h-100 p-4">
+                    <div class="step-card h-100 text-center">
                         <div class="step-icon d-flex align-items-center justify-content-center">3</div>
-                        <h3>Match & Chatea</h3>
-                        <p>Dale like a quien te guste. Si es recíproco, ¡es hora de romper el hielo!</p>
+                        <h3 class="fw-bold text-white h4 mb-3">Match & Chatea</h3>
+                        <p class="text-secondary mb-0">Si hay un "melt", es hora de romper el hielo y empezar a fundir
+                            corazones.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="gallery">
-        <h2 class="section-title">Un vistazo a la App</h2>
-        <div class="gallery-deco d-none d-xl-flex flex-column align-items-center gap-4">
-            <span class="deco-emoji">🧀</span>
-            <span class="deco-emoji">✨</span>
-            <div class="heart-pulse">❤️</div>
-            <span class="deco-emoji">🍷</span>
-            <span class="deco-emoji">🔥</span>
+    <section class="gallery py-5">
+        <div class="container text-center">
+            <h2 class="section-title display-4 fw-black mb-5">Un vistazo a la App</h2>
         </div>
         <div id="cheeseCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -241,14 +244,16 @@
                 <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
+        </div>
     </section>
 
 
     <section id="planes" class="premium-promo py-5 text-center">
         <div class="container">
             <div class="premium-content">
-                <h2>🧀 Cheese Gold y Platinum</h2>
-                <p>Pásate al lado dorado. Likes ilimitados, ve a quién le gustas y rebobina si te equivocaste (todos
+                <h2 class="display-3 fw-black">🧀 Cheese Gold y Platinum</h2>
+                <p class="lead mb-5">Pásate al lado dorado. Likes ilimitados, ve a quién le gustas y rebobina si te
+                    equivocaste (todos
                     merecemos una segunda oportunidad).</p>
                 <button class="btn btn-primary rounded-pill px-5 py-3 fw-bold" data-bs-toggle="modal"
                     data-bs-target="#planesModal">Ver Planes</button>
@@ -256,7 +261,8 @@
         </div>
     </section>
 
-    <section id="download" class="download-section py-5 text-center">
+    <section id="download" class="download-section py-5 text-center"
+        style="background: linear-gradient(0deg, #1a1500 0%, var(--bg-dark) 100%);">
         <div class="container py-5">
             <h2 class="display-4 fw-bold mb-3">¿Listo para derretirte?</h2>
             <p class="lead mb-5">Descarga Cheese hoy mismo y empieza a conectar.</p>
@@ -264,8 +270,8 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Cheese App. Todos los derechos reservados.</p>
+    <footer class="text-center py-4 border-top border-white border-opacity-10">
+        <p class="mb-0">&copy; 2025 Cheese App. Todos los derechos reservados.</p>
     </footer>
 
 
@@ -273,14 +279,14 @@
     <div class="modal fade" id="planesModal" tabindex="-1" aria-labelledby="planesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content"
-                style="background-color: var(--bg-dark); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <div class="modal-header border-bottom-0">
+                style="background-color: #0a0a0a; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 2rem; overflow: hidden;">
+                <div class="modal-header border-bottom-0 p-4 pb-0">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
                     <iframe src="pages/planes.html"
-                        style="width: 100%; height: 80vh; border: none; border-radius: 0 0 10px 10px;"></iframe>
+                        style="width: 100%; height: 85vh; border: none; overflow: hidden;"></iframe>
                 </div>
             </div>
         </div>
