@@ -15,12 +15,17 @@
             background: transparent !important;
             color: #fff;
             font-family: 'Outfit', sans-serif;
-            overflow: hidden;
-            /* Removing scrollbar */
+            overflow-y: auto;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
 
         .text-cheese-yellow {
@@ -33,7 +38,8 @@
             transition: all 0.3s ease;
             height: 100%;
             position: relative;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 30, 30, 0.6) !important;
+            /* Force dark background */
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }

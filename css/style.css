@@ -483,13 +483,121 @@ body {
     }
 }
 
-@media (max-width:576px) {
+@media (max-width: 991px) {
+    .hero {
+        text-align: center;
+        padding-top: 120px !important;
+    }
+
+    .hero-container .row {
+        flex-direction: column;
+    }
+
+    .hero-visual {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-item.reverse {
+        flex-direction: column-reverse;
+    }
+
+    .feature-item .col-xl-6 {
+        margin-bottom: 2rem;
+        text-align: center !important;
+    }
+
+    .feature-item .d-flex {
+        justify-content: center !important;
+    }
+
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        border-radius: 1rem;
+        border: 1px solid var(--glass-border);
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .premium-promo h2 {
+        font-size: 2.5rem;
+    }
+
+    .phone-mockup {
+        width: 240px;
+        height: 480px;
+        transform: perspective(1000px) rotateY(0deg) !important;
+        margin: 0 auto;
+    }
+
+    .bubble {
+        max-width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .how-it-works,
+    .gallery,
+    .premium-promo,
+    .download-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
     }
 
     .phone-mockup {
         width: 220px;
         height: 440px;
+    }
+
+    .radar-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .radar-scan,
+    .radar-circles {
+        width: 100%;
+        height: 100%;
+    }
+
+    .step-card {
+        padding: 1.5rem !important;
+    }
+
+    .phone-placeholder {
+        width: 240px;
+    }
+
+    .navbar-brand .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .store-badge img {
+        height: 40px !important;
+        width: auto;
+    }
+
+    .d-flex.gap-4 {
+        gap: 1rem !important;
+        /* Reduce gap between buttons */
     }
 }
