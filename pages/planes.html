@@ -15,6 +15,17 @@
             background: transparent !important;
             color: #fff;
             font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            /* Removing scrollbar */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-cheese-yellow {
+            color: #FFD700 !important;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .plan-card {
@@ -22,17 +33,26 @@
             transition: all 0.3s ease;
             height: 100%;
             position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
         .card-body {
-            padding: 3rem 2rem;
+            padding: 2.5rem 1.5rem;
         }
 
         .badge-popular {
             background: #FFD700;
             color: #000;
             font-weight: 900;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             border-radius: 0.5rem;
             padding: 0.4rem 0.8rem;
@@ -40,61 +60,111 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .price-text {
+            font-size: 4rem;
+            white-space: nowrap;
+            color: #FFD700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            vertical-align: top;
+            opacity: 0.8;
+        }
+
+        .period-text {
+            font-size: 1rem;
+            color: #fff;
+            /* Ensuring clear readability */
+            font-weight: 500;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            /* Ensuring clear readability */
+            opacity: 1 !important;
+            /* Overriding any opacity */
+        }
+
+        .check-icon {
+            color: #FFD700;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body class="p-4">
-    <div class="container pb-5">
-        <h2 class="text-center mb-5 display-5 fw-black text-white">Nuestros Planes</h2>
+    <div class="container-fluid pb-4">
+        <h2 class="text-center mb-4 display-5 fw-black text-white" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+            Nuestros Planes</h2>
         <div class="row g-4 justify-content-center">
             <!-- Free Plan -->
             <div class="col-md-4">
-                <div class="card plan-card plan-card-outline text-white">
+                <div class="card plan-card">
                     <div class="card-body text-center d-flex flex-column">
-                        <h3 class="h4 fw-bold mb-4">Gratis</h3>
-                        <div class="display-3 fw-black mb-5">0€</div>
-                        <ul class="list-unstyled text-start flex-grow-1 mb-5 opacity-75">
-                            <li class="mb-3">✓ Perfiles limitados</li>
-                            <li class="mb-3">✓ 5 Super Cheese al día</li>
-                            <li class="mb-3">✓ Chat con matches</li>
+                        <h3 class="h4 fw-bold mb-3 text-white">Gratis</h3>
+                        <div class="price-text fw-black mb-1">0<span class="price-currency">€</span></div>
+                        <span class="period-text mb-4">Para siempre</span>
+
+                        <ul class="list-unstyled text-start flex-grow-1 mb-4 feature-list">
+                            <li><span class="check-icon">✓</span> Perfiles limitados</li>
+                            <li><span class="check-icon">✓</span> 5 Super Cheese al día</li>
+                            <li><span class="check-icon">✓</span> Chat con matches</li>
                         </ul>
-                        <button class="btn btn-outline-white rounded-pill py-3 fw-bold">Actual</button>
+                        <button class="btn btn-outline-light rounded-pill py-2 fw-bold w-100">Plan Actual</button>
                     </div>
                 </div>
             </div>
             <!-- Gold Plan -->
             <div class="col-md-4">
-                <div class="card plan-card plan-card-gold text-white" style="background: rgba(255,215,0,0.03);">
+                <div class="card plan-card"
+                    style="border-color: rgba(255, 215, 0, 0.3); background: linear-gradient(180deg, rgba(255,215,0,0.05) 0%, rgba(0,0,0,0) 100%);">
                     <div class="badge-popular">Más Popular</div>
                     <div class="card-body text-center d-flex flex-column">
-                        <h3 class="h4 fw-bold mb-4">Gold</h3>
-                        <div class="display-3 fw-black mb-1">14.99€<span class="fs-6 opacity-50">/mes</span></div>
-                        <ul class="list-unstyled text-start flex-grow-1 mb-5">
-                            <li class="mb-3">✓ Likes ilimitados</li>
-                            <li class="mb-3">✓ Ver a quién le gustas</li>
-                            <li class="mb-3">✓ Rebobinar (Rewind)</li>
-                            <li class="mb-3">✓ 10 Super Cheese al día</li>
+                        <h3 class="h4 fw-bold mb-3 text-white">Gold</h3>
+                        <div class="price-text fw-black mb-1">14.99<span class="price-currency">€</span></div>
+                        <span class="period-text mb-4">/mes</span>
+
+                        <ul class="list-unstyled text-start flex-grow-1 mb-4 feature-list">
+                            <li><span class="check-icon">✓</span> Likes ilimitados</li>
+                            <li><span class="check-icon">✓</span> Ver a quién le gustas</li>
+                            <li><span class="check-icon">✓</span> Rebobinar (Rewind)</li>
+                            <li><span class="check-icon">✓</span> 10 Super Cheese al día</li>
                         </ul>
-                        <button class="btn btn-gold rounded-pill py-3 fw-bold">Elegir Gold</button>
+                        <button class="btn btn-primary rounded-pill py-2 fw-bold w-100"
+                            style="background: #FFD700; color: black; border: none; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);">Elegir
+                            Gold</button>
                     </div>
                 </div>
             </div>
             <!-- Platinum Plan -->
             <div class="col-md-4">
-                <div class="card plan-card plan-card-outline text-white">
+                <div class="card plan-card">
                     <div class="card-body text-center d-flex flex-column">
-                        <h3 class="h4 fw-bold mb-4">Platinum</h3>
-                        <div class="display-3 fw-black mb-1">39.99€<span class="fs-6 opacity-50">/mes</span></div>
-                        <ul class="list-unstyled text-start flex-grow-1 mb-5 opacity-75">
-                            <li class="mb-3">✓ Todo lo de Gold</li>
-                            <li class="mb-3">✓ Mensaje antes de match</li>
-                            <li class="mb-3">✓ Prioridad en likes</li>
-                            <li class="mb-3">✓ Ver confirmación lectura</li>
+                        <h3 class="h4 fw-bold mb-3 text-white">Platinum</h3>
+                        <div class="price-text fw-black mb-1">39.99<span class="price-currency">€</span></div>
+                        <span class="period-text mb-4">/mes</span>
+
+                        <ul class="list-unstyled text-start flex-grow-1 mb-4 feature-list">
+                            <li><span class="check-icon">✓</span> Todo lo de Gold</li>
+                            <li><span class="check-icon">✓</span> Mensaje antes de match</li>
+                            <li><span class="check-icon">✓</span> Prioridad en likes</li>
+                            <li><span class="check-icon">✓</span> Ver confirmación lectura</li>
                         </ul>
-                        <button class="btn btn-outline-primary rounded-pill py-3 fw-bold"
-                            style="border-color: #FFD700 !important; color: #FFD700 !important;">Elegir
-                            Platinum</button>
+                        <button class="btn btn-outline-warning rounded-pill py-2 fw-bold w-100 text-white"
+                            style="border-color: #FFD700;">Elegir Platinum</button>
                     </div>
                 </div>
             </div>
