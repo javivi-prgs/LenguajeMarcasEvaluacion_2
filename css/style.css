@@ -598,6 +598,5 @@ body {
 
     .d-flex.gap-4 {
         gap: 1rem !important;
-        /* Reduce gap between buttons */
     }
 }
