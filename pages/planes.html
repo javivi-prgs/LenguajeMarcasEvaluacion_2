@@ -15,17 +15,12 @@
             background: transparent !important;
             color: #fff;
             font-family: 'Outfit', sans-serif;
-            overflow-y: auto;
+            overflow: hidden;
+            /* Removing scrollbar */
             min-height: 100vh;
-        }
-
-        @media (min-width: 768px) {
-            body {
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .text-cheese-yellow {
@@ -38,8 +33,7 @@
             transition: all 0.3s ease;
             height: 100%;
             position: relative;
-            background: rgba(30, 30, 30, 0.6) !important;
-            /* Force dark background */
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
@@ -164,10 +158,10 @@
                         <span class="period-text mb-4">/mes</span>
 
                         <ul class="list-unstyled text-start flex-grow-1 mb-4 feature-list">
-                            <li><span class="check-icon">✓</span> Todo lo de Gold</li>
+                            <li><span class="check-icon">✓</span> Todo lo de Gold incluido</li>
                             <li><span class="check-icon">✓</span> Mensaje antes de match</li>
                             <li><span class="check-icon">✓</span> Prioridad en likes</li>
-                            <li><span class="check-icon">✓</span> Ver confirmación lectura</li>
+                            <li><span class="check-icon">✓</span> Cambiar ubicación (modo viajero)</li>
                         </ul>
                         <button class="btn btn-outline-warning rounded-pill py-2 fw-bold w-100 text-white"
                             style="border-color: #FFD700;">Elegir Platinum</button>
