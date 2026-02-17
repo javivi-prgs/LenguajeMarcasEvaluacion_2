@@ -7,28 +7,23 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 body {
     font-family: 'Outfit', sans-serif;
     background: var(--bg-dark);
     color: #fff;
 }
-
 .fw-black {
     font-weight: 900 !important;
 }
-
 .custom-navbar {
     background: var(--bg-dark) !important;
     border: none !important;
     box-shadow: none !important;
     transition: transform 0.3s ease-in-out;
 }
-
 .navbar-hidden {
     transform: translateY(-100%);
 }
-
 .btn-primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
     border: none !important;
@@ -37,12 +32,10 @@ body {
     font-weight: 700;
     transition: var(--transition);
 }
-
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
 }
-
 .carousel-btn {
     background: rgba(128, 128, 128, 0.4);
     border: none;
@@ -53,41 +46,33 @@ body {
     height: 50px;
     transition: all .3s;
 }
-
 .carousel-btn:hover {
     background: rgba(128, 128, 128, 0.8);
     transform: scale(1.1);
 }
-
 .hero,
 .premium-promo,
 .download-section {
     background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, var(--bg-dark) 80%);
 }
-
 .how-it-works {
     background: radial-gradient(circle at center, rgba(255, 215, 0, 0.02) 0%, var(--bg-dark) 80%);
     border-block: 1px solid rgba(255, 215, 0, 0.05);
 }
-
 .premium-promo {
     border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
-
 .download-section {
     background: linear-gradient(0deg, #1a1500 0%, var(--bg-dark) 100%);
 }
-
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 4.2rem);
     line-height: 1.1;
 }
-
 .download-section h2 {
     font-size: 4rem;
     font-weight: 900;
 }
-
 .highlight-soulmate {
     background: linear-gradient(135deg, #FF8C00 0%, var(--primary) 100%);
     -webkit-background-clip: text;
@@ -96,7 +81,6 @@ body {
     filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.3));
     display: inline-block;
 }
-
 .cheese-drip {
     position: absolute;
     top: 0;
@@ -107,7 +91,6 @@ body {
     filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFD700' fill-opacity='1' d='M0,0 L1440,0 L1440,140 C1120,240 1020,60 720,160 C420,260 320,80 0,180 Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
 }
-
 .phone-mockup,
 .phone-placeholder {
     background: #000;
@@ -118,31 +101,25 @@ body {
     box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
     transition: var(--transition);
 }
-
 .phone-mockup {
     transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
 }
-
 .phone-mockup:hover {
     transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
 }
-
 .phone-placeholder:hover {
     transform: translateY(-10px) scale(1.02);
 }
-
 .map-grid {
     background-image: linear-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
     opacity: .4;
 }
-
 .radar-container {
     background: radial-gradient(circle, rgba(20, 20, 20, 1) 0%, rgba(5, 5, 5, 1) 100%);
     border: 2px solid rgba(255, 215, 0, 0.15);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
-
 .radar-circles span {
     position: absolute;
     top: 50%;
@@ -152,7 +129,6 @@ body {
     border-radius: 50%;
     pointer-events: none;
 }
-
 .radar-scan {
     position: absolute;
     border-radius: 50%;
@@ -160,12 +136,10 @@ body {
     pointer-events: none;
     background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 215, 0, 0.1) 60deg, rgba(255, 215, 0, 0.8) 90deg, transparent 90.1deg);
 }
-
 .user-marker,
 .user-center {
     background: var(--primary);
 }
-
 .user-marker {
     box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3);
 }
@@ -173,7 +147,6 @@ body {
 .user-center {
     box-shadow: 0 0 20px var(--primary);
 }
-
 .pulse-ripple {
     position: absolute;
     top: 50%;
@@ -185,7 +158,6 @@ body {
     pointer-events: none;
     z-index: 1;
 }
-
 .map-ui-bottom {
     background: rgba(0, 0, 0, 0.8);
     padding: 8px 20px;
@@ -195,7 +167,6 @@ body {
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 215, 0, 0.2);
 }
-
 .bubble {
     padding: 18px 25px;
     border-radius: 28px;
@@ -204,18 +175,15 @@ body {
     width: fit-content;
     max-width: 90%;
 }
-
 .bubble.received {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(5px);
     border: 1px solid var(--glass-border);
 }
-
 .bubble.sent {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--bg-dark);
 }
-
 .step-card {
     transition: var(--transition);
     position: relative;
@@ -225,14 +193,12 @@ body {
     border-radius: 2rem !important;
     padding: 2.5rem !important;
 }
-
 .step-card:hover {
     transform: translateY(-12px);
     border-color: var(--primary) !important;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-
 .step-icon {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--bg-dark);
@@ -243,11 +209,9 @@ body {
     transition: var(--transition);
     box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
 }
-
 .step-card:hover .step-icon {
     transform: rotate(0) scale(1.1);
 }
-
 .card,
 .pricing-card {
     height: 100% !important;
@@ -255,13 +219,11 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .card-body {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 @media (min-width:1200px) {
     #cheeseCarousel .carousel-inner {
         display: flex !important;
@@ -270,7 +232,6 @@ body {
         width: 100% !important;
         overflow: visible !important;
     }
-
     #cheeseCarousel .carousel-item {
         display: block !important;
         width: auto !important;
@@ -279,13 +240,11 @@ body {
         opacity: 1 !important;
         transform: none !important;
     }
-
     #cheeseCarousel .carousel-control-prev,
     #cheeseCarousel .carousel-control-next {
         display: none !important;
     }
 }
-
 @media (max-width: 991px) {
     .navbar-collapse {
         background: var(--bg-dark) !important;

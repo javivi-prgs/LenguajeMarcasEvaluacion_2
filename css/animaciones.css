@@ -1,3 +1,4 @@
+/* --- Animations --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -43,6 +44,7 @@
     100% { width: 600px; height: 600px; opacity: 0; border-width: 1px; }
 }
 
+/* --- Animation Classes --- */
 .animate-fade-up { animation: fadeInUp .8s ease-out forwards; }
 .animate-drip { animation: drip-sway 12s ease-in-out infinite alternate; }
 .animate-pulse-ring { animation: map-pulse 3s infinite ease-out; }

@@ -15,12 +15,24 @@
             background: transparent !important;
             color: #fff;
             font-family: 'Outfit', sans-serif;
-            overflow: hidden;
-            /* Removing scrollbar */
+            /* CAMBIO CRÍTICO: Permitir scroll */
+            overflow-y: auto !important;
             min-height: 100vh;
+            /* Ajuste de flex para que no corte contenido en móviles */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; 
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        /* Centrar verticalmente solo si la pantalla es grande */
+        @media (min-height: 800px) {
+            body {
+                justify-content: center;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
         }
 
         .text-cheese-yellow {
@@ -80,7 +92,6 @@
         .period-text {
             font-size: 1rem;
             color: #fff;
-            /* Ensuring clear readability */
             font-weight: 500;
             display: block;
             margin-top: 0.2rem;
@@ -93,9 +104,7 @@
             align-items: center;
             gap: 8px;
             color: #fff;
-            /* Ensuring clear readability */
             opacity: 1 !important;
-            /* Overriding any opacity */
         }
 
         .check-icon {
@@ -105,12 +114,11 @@
     </style>
 </head>
 
-<body class="p-4">
-    <div class="container-fluid pb-4">
+<body>
+    <div class="container-fluid">
         <h2 class="text-center mb-4 display-5 fw-black text-white" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
             Nuestros Planes</h2>
         <div class="row g-4 justify-content-center">
-            <!-- Free Plan -->
             <div class="col-md-4">
                 <div class="card plan-card">
                     <div class="card-body text-center d-flex flex-column">
@@ -127,7 +135,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Gold Plan -->
             <div class="col-md-4">
                 <div class="card plan-card"
                     style="border-color: rgba(255, 215, 0, 0.3); background: linear-gradient(180deg, rgba(255,215,0,0.05) 0%, rgba(0,0,0,0) 100%);">
@@ -149,7 +156,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Platinum Plan -->
             <div class="col-md-4">
                 <div class="card plan-card">
                     <div class="card-body text-center d-flex flex-column">
