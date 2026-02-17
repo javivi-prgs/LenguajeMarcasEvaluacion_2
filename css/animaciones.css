@@ -1,23 +1,11 @@
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes drip-sway {
-    from {
-        transform: scaleX(1) translateY(0);
-    }
-
-    to {
-        transform: scaleX(1.02) translateY(-5px);
-    }
+    from { transform: scaleX(1) translateY(0); }
+    to { transform: scaleX(1.02) translateY(-5px); }
 }
 
 @keyframes map-pulse {
@@ -51,19 +39,10 @@
 }
 
 @keyframes map-pulse-ripple {
-    0% {
-        width: 0px;
-        height: 0px;
-        opacity: 0.8;
-        border-width: 4px;
-    }
-    100% {
-        width: 600px; 
-        height: 600px;
-        opacity: 0;
-        border-width: 1px;
-    }
+    0% { width: 0px; height: 0px; opacity: 0.8; border-width: 4px; }
+    100% { width: 600px; height: 600px; opacity: 0; border-width: 1px; }
 }
+
 .animate-fade-up { animation: fadeInUp .8s ease-out forwards; }
 .animate-drip { animation: drip-sway 12s ease-in-out infinite alternate; }
 .animate-pulse-ring { animation: map-pulse 3s infinite ease-out; }
@@ -72,6 +51,4 @@
 .animate-radar-sweep { animation: radar-sweep 4s linear infinite; transform-origin: center center; }
 .animate-radar-dot { animation: radar-dot-appear 4s infinite ease-out; }
 .animate-pulse-heart { animation: pulse-heart 2s infinite ease-in-out; }
-.animate-pulse-ripple {
-    animation: map-pulse-ripple 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-}
+.animate-pulse-ripple { animation: map-pulse-ripple 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; }
