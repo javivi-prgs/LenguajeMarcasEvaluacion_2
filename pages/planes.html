@@ -11,6 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        /* Ocultar barra de scroll visualmente en todo el documento */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        html,
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
         body {
             background: transparent !important;
             color: #fff;
@@ -21,7 +35,7 @@
             /* Ajuste de flex para que no corte contenido en móviles */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; 
+            justify-content: flex-start;
             padding-top: 2rem;
             padding-bottom: 2rem;
         }
