@@ -22,11 +22,6 @@ body {
     background: var(--bg-dark) !important;
     border: none !important;
     box-shadow: none !important;
-    transition: transform 0.3s ease-in-out;
-}
-
-.navbar-hidden {
-    transform: translateY(-100%);
 }
 
 .btn-primary {

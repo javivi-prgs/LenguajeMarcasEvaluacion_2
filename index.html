@@ -55,7 +55,8 @@
                     </h1>
                     <p class="lead text-secondary mb-5 mx-auto mx-lg-0 animate-fade-up"
                         style="animation-delay: 0.2s; opacity: 0; max-width: 500px;">La app de citas más
-                        <strong>cremosa</strong>. Radar, Matches y cero tonterías.</p>
+                        <strong>cremosa</strong>. Radar, Matches y cero tonterías.
+                    </p>
                     <div class="d-flex justify-content-center justify-content-lg-start gap-3 animate-fade-up"
                         style="animation-delay: 0.4s; opacity: 0;">
                         <a href="#" class="store-badge"><img
@@ -79,7 +80,8 @@
                             <div class="user-marker position-absolute top-50 start-50 translate-middle rounded-circle z-3"
                                 style="width: 20px; height: 20px;"></div>
                             <div class="map-ui-bottom position-absolute bottom-0 start-50 translate-middle-x mb-4 z-3">
-                                <span>Explorando...</span></div>
+                                <span>Explorando...</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,7 +97,8 @@
                     <div class="radar-container position-relative overflow-hidden rounded-circle w-100"
                         style="max-width: 320px; aspect-ratio: 1/1;">
                         <div class="radar-circles w-100 h-100 position-absolute top-0 start-0">
-                            <span></span><span></span><span></span></div>
+                            <span></span><span></span><span></span>
+                        </div>
                         <div class="radar-grid w-100 h-100 position-absolute top-0 start-0"></div>
                         <div class="radar-scan animate-radar-sweep position-absolute top-50 start-50 w-100 h-100 z-2">
                         </div>
@@ -256,14 +259,7 @@
         </div>
     </div>
 
-    <script>
-        const navbar = document.querySelector('.custom-navbar');
-        if (window.scrollY === 0) navbar.classList.add('navbar-hidden');
 
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('navbar-hidden', window.scrollY <= 50);
-        });
-    </script>
 </body>
 
 </html>
